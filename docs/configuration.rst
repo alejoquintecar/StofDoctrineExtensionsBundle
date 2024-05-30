@@ -1,6 +1,34 @@
 Configuration
 =============
 
+Add the extensions to your mapping Symfony 7
+--------------------------------------------
+
+.. code-block:: yaml
+
+    # app/config/config.yml
+    # (or config/packages/doctrine.yaml if you use Flex)
+    doctrine:
+        orm:
+            mappings:
+                # Gedmo
+                translatable:
+                    type: attribute # or annotation or xml
+                    alias: Gedmo
+                    prefix: Gedmo\Translatable\Entity
+                    # make sure vendor library location is correct
+                    dir: "%kernel.project_dir%/vendor/gedmo/doctrine-extensions/src/Translatable/Entity"
+                loggable:
+                    type: attribute # or annotation or xml
+                    alias: Gedmo
+                    prefix: Gedmo\Loggable\Entity
+                    dir: "%kernel.project_dir%/vendor/gedmo/doctrine-extensions/src/Loggable/Entity"
+                tree:
+                    type: attribute # or annotation or xml
+                    alias: Gedmo
+                    prefix: Gedmo\Tree\Entity
+                    dir: "%kernel.project_dir%/vendor/gedmo/doctrine-extensions/src/Tree/Entity"
+
 Add the extensions to your mapping
 ----------------------------------
 
